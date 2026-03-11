@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Isha Hardware Store</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="bg-glow"></div>
+
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+          </path>
+        </svg>
+        ISHA HARDWARE
+      </a>
+
+      <div class="search-container" style="visibility: hidden;">
+        <input type="text" class="search-input" placeholder="Search premium tools & materials...">
+      </div>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline admin-link" style="display: none; border-color: rgba(139, 92, 246, 0.4); color: #8b5cf6;">Admin</a>
+        <a href="login.html" class="btn btn-outline auth-link">Login</a>
+        <a href="cart.html" class="btn btn-primary">
+          <div class="cart-icon-wrapper">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="cart-badge">0</span>
+          </div>
+          Cart
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container" style="padding-top: 6rem; padding-bottom: 4rem;">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Get in <span class="text-gradient-primary">Touch</span></h1>
+        <p style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.1rem;">
+          Have questions about our premium tools, need support with an order, or looking for expert advice? We're here
+          to help you build better.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto;">
+        <!-- Contact Form -->
+        <div class="product-card" style="padding: 2.5rem; text-align: left;">
+          <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.5rem;">Send a Message</h3>
+          <form
+            onsubmit="event.preventDefault(); alert('Message sent successfully! We will get back to you soon.'); this.reset();"
+            style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div>
+              <label style="display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">Full
+                Name</label>
+              <input type="text" required
+                style="width: 100%; padding: 0.8rem; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); border-radius: 8px; color: #fff; outline: none;">
+            </div>
+            <div>
+              <label style="display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">Email
+                Address</label>
+              <input type="email" required
+                style="width: 100%; padding: 0.8rem; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); border-radius: 8px; color: #fff; outline: none;">
+            </div>
+            <div>
+              <label
+                style="display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">Message</label>
+              <textarea required rows="5"
+                style="width: 100%; padding: 0.8rem; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); border-radius: 8px; color: #fff; outline: none; resize: vertical;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary"
+              style="width: 100%; justify-content: center; padding: 1rem;">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+          <div class="product-card"
+            style="padding: 2rem; display: flex; align-items: flex-start; gap: 1rem; border-color: rgba(139, 92, 246, 0.2);">
+            <div
+              style="background: rgba(139, 92, 246, 0.1); padding: 1rem; border-radius: 12px; color: var(--primary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+            </div>
+            <div>
+              <h4 style="color: #fff; margin-bottom: 0.5rem;">Phone Support</h4>
+              <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Mon-Fri: 8am - 6pm EST</p>
+              <a href="tel:+15551234567" style="color: var(--primary); text-decoration: none; font-weight: 500;">+91
+                9011703529 </a>
+            </div>
+          </div>
+
+          <div class="product-card"
+            style="padding: 2rem; display: flex; align-items: flex-start; gap: 1rem; border-color: rgba(139, 92, 246, 0.2);">
+            <div
+              style="background: rgba(139, 92, 246, 0.1); padding: 1rem; border-radius: 12px; color: var(--primary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h4 style="color: #fff; margin-bottom: 0.5rem;">Email Us</h4>
+              <p style="color: var(--text-muted); margin-bottom: 0.5rem;">24/7 dedicated support</p>
+              <a href="mailto:support@ishahardware.com"
+                style="color: var(--primary); text-decoration: none; font-weight: 500;">support@ishahardware.com</a>
+            </div>
+          </div>
+
+          <div class="product-card"
+            style="padding: 2rem; display: flex; align-items: flex-start; gap: 1rem; border-color: rgba(139, 92, 246, 0.2);">
+            <div
+              style="background: rgba(139, 92, 246, 0.1); padding: 1rem; border-radius: 12px; color: var(--primary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <h4 style="color: #fff; margin-bottom: 0.5rem;">Shop</h4>
+              <p style="color: var(--text-muted); line-height: 1.5;">Near Gram Panachayt Office<br>Nannaj<br>Solapur
+                City, Maharashtra 413001</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="border-top: 1px solid var(--border); padding: 4rem 0 2rem; margin-top: 4rem;">
+    <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4rem;">
+      <div style="flex: 1; min-width: 300px;">
+        <div class="logo" style="margin-bottom: 1rem;">ISHA HARDWARE</div>
+        <p style="color: var(--text-muted); max-width: 300px;">Providing the foundational tools for the builders,
+          makers, and creators of tomorrow.</p>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1.5rem; color: #fff;">Store</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+          <li><a href="index.html" style="color: var(--text-muted); text-decoration: none;">Shop All</a></li>
+          <li><a href="about.html" style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
+          <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact</a></li>
+          <li><a href="orders.html" style="color: var(--text-muted); text-decoration: none;">Order Tracking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1.5rem; color: #fff;">Account</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+          <li><a href="login.html" style="color: var(--text-muted); text-decoration: none;" class="auth-link">Login</a>
+          </li>
+          <li><a href="login.html" style="color: var(--text-muted); text-decoration: none;">Admin Access</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container"
+      style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+      © 2026 Isha Hardware Store. Built for excellence.
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

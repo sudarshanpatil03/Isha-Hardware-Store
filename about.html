@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Isha Hardware Store</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+        </svg>
+        ISHA HARDWARE
+      </a>
+
+      <div class="search-container" style="visibility: hidden;">
+        <input type="text" class="search-input" placeholder="Search premium tools & materials...">
+      </div>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline admin-link" style="display: none; border-color: rgba(139, 92, 246, 0.4); color: #8b5cf6;">Admin</a>
+        <a href="login.html" class="btn btn-outline auth-link">Login</a>
+        <a href="cart.html" class="btn btn-primary">
+          <div class="cart-icon-wrapper">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="cart-badge">0</span>
+          </div>
+          Cart
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container" style="padding-top: 6rem; padding-bottom: 4rem; text-align: center;">
+      <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">About <span class="text-gradient-primary">Isha Hardware</span></h1>
+      <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem; line-height: 1.8; font-size: 1.1rem;">
+        Welcome to Isha Hardware, your premier destination for high-quality, professional-grade tools and materials. We are dedicated to providing builders, makers, and creators with the foundational equipment needed to turn visions into reality with precision and durability.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left; margin-top: 4rem;">
+        <div class="product-card" style="padding: 2rem;">
+          <h3 style="color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Our Mission
+          </h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">To empower professionals and DIY enthusiasts alike by delivering top-tier hardware solutions that guarantee performance, safety, and ultimate satisfaction in every project.</p>
+        </div>
+        <div class="product-card" style="padding: 2rem;">
+          <h3 style="color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            Premium Quality
+          </h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">We hand-pick every tool and material in our catalog. If it doesn't meet our rigorous standards for durability and excellence, it doesn't make it to our store.</p>
+        </div>
+        <div class="product-card" style="padding: 2rem;">
+          <h3 style="color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            Dedicated Support
+          </h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">Our team of hardware experts is available 24/7 to provide guidance, recommend the right tools for your specific needs, and ensure a seamless shopping experience.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="border-top: 1px solid var(--border); padding: 4rem 0 2rem; margin-top: 4rem;">
+    <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4rem;">
+      <div style="flex: 1; min-width: 300px;">
+        <div class="logo" style="margin-bottom: 1rem;">ISHA HARDWARE</div>
+        <p style="color: var(--text-muted); max-width: 300px;">Providing the foundational tools for the builders, makers, and creators of tomorrow.</p>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1.5rem; color: #fff;">Store</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+          <li><a href="index.html" style="color: var(--text-muted); text-decoration: none;">Shop All</a></li>
+          <li><a href="about.html" style="color: var(--text-muted); text-decoration: none;">About Us</a></li>
+          <li><a href="orders.html" style="color: var(--text-muted); text-decoration: none;">Order Tracking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1.5rem; color: #fff;">Account</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+          <li><a href="login.html" style="color: var(--text-muted); text-decoration: none;" class="auth-link">Login</a></li>
+          <li><a href="login.html" style="color: var(--text-muted); text-decoration: none;">Admin Access</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+      © 2026 Isha Hardware Store. Built for excellence.
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

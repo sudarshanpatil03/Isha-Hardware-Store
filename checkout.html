@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Isha Hardware</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .stepper { display: flex; align-items: center; justify-content: center; margin-bottom: 4rem; position: relative; max-width: 600px; margin: 0 auto 4rem; }
+    .stepper::before { content: ''; position: absolute; top: 18px; left: 0; right: 0; height: 2px; background: var(--bg-card); z-index: 0; }
+    .stepper-progress { position: absolute; top: 18px; left: 0; height: 2px; background: var(--primary); z-index: 1; transition: var(--transition); }
+    .step { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1; }
+    .step-icon { width: 36px; height: 36px; border-radius: 50%; background: var(--bg-card); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--text-muted); transition: var(--transition); }
+    .step.active .step-icon { background: var(--primary); border-color: var(--primary); color: #fff; box-shadow: 0 0 15px var(--primary-glow); }
+    .step.completed .step-icon { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .step-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+    .step.active .step-label { color: var(--primary); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        ISHA HARDWARE
+      </a>
+      <div class="nav-actions">
+        <a href="cart.html" class="btn btn-outline">← Back to Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 4rem 2rem;">
+    
+    <div class="stepper">
+      <div class="stepper-progress" style="width: 50%;"></div>
+      <div class="step active">
+        <div class="step-icon">1</div>
+        <div class="step-label">Address</div>
+      </div>
+      <div class="step">
+        <div class="step-icon">2</div>
+        <div class="step-label">Payment</div>
+      </div>
+      <div class="step">
+        <div class="step-icon">3</div>
+        <div class="step-label">Review</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4rem;" class="cart-layout">
+      
+      <!-- Address Form -->
+      <form id="addressForm" onsubmit="saveAddress(event)" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 3rem;">
+        <h2 style="margin-bottom: 2rem;">Shipping Details</h2>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" id="fname" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" id="lname" class="form-control" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Street Address</label>
+          <input type="text" id="street" class="form-control" placeholder="House number and street name" required>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Town / City</label>
+            <input type="text" id="city" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Pincode</label>
+            <input type="text" id="pin" class="form-control" required>
+          </div>
+        </div>
+        
+        <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
+          <button type="submit" class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.1rem;">Continue to Payment →</button>
+        </div>
+      </form>
+
+      <!-- Order Summary -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; height: fit-content; position: sticky; top: 100px;">
+        <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">Summary</h3>
+        
+        <div id="checkoutSummaryItems" style="margin-bottom: 2rem;"></div>
+        
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+          <span style="color: var(--text-muted);">Subtotal</span>
+          <span style="font-weight: 600;" id="summarySubtotal">₹0.00</span>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem;">
+          <span style="color: var(--text-muted);">Shipping</span>
+          <span style="font-weight: 600;">₹50.00</span>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; font-size: 1.25rem;">
+          <strong>Total</strong>
+          <strong class="text-gradient-primary" id="summaryTotal">₹0.00</strong>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!currentUser) {
+        window.location.href = 'login.html?redirect=checkout.html';
+        return;
+      }
+      if (cart.length === 0) {
+        window.location.href = 'cart.html';
+        return;
+      }
+      renderSummary();
+      loadSavedAddress();
+    });
+
+    function renderSummary() {
+      const list = document.getElementById('checkoutSummaryItems');
+      list.innerHTML = '';
+      let subtotal = 0;
+      
+      cart.forEach(item => {
+        subtotal += item.price * item.quantity;
+        const div = document.createElement('div');
+        div.style.cssText = 'display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;';
+        div.innerHTML = `
+          <div style="width: 50px; height: 50px; border-radius: 8px; background: #111; overflow: hidden; position: relative;">
+            <img src="${item.image}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=100';">
+            <span style="position: absolute; top: -5px; right: -5px; background: var(--primary); color: #fff; width: 18px; height: 18px; border-radius: 50%; font-size: 0.6rem; display: flex; align-items: center; justify-content: center; font-weight: bold;">${item.quantity}</span>
+          </div>
+          <div style="flex: 1; font-size: 0.9rem;">${item.name}</div>
+          <div style="font-weight: 600; font-size: 0.9rem;">₹${(item.price * item.quantity).toFixed(2)}</div>
+        `;
+        list.appendChild(div);
+      });
+      
+      document.getElementById('summarySubtotal').textContent = `₹${subtotal.toFixed(2)}`;
+      document.getElementById('summaryTotal').textContent = `₹${(subtotal + 50).toFixed(2)}`;
+    }
+
+    function saveAddress(e) {
+      e.preventDefault();
+      const address = {
+        fname: document.getElementById('fname').value,
+        lname: document.getElementById('lname').value,
+        email: document.getElementById('email').value,
+        street: document.getElementById('street').value,
+        city: document.getElementById('city').value,
+        pin: document.getElementById('pin').value
+      };
+      localStorage.setItem('checkoutAddress', JSON.stringify(address));
+      window.location.href = 'payment.html';
+    }
+
+    function loadSavedAddress() {
+      const saved = JSON.parse(localStorage.getItem('checkoutAddress'));
+      if (saved) {
+        document.getElementById('fname').value = saved.fname || '';
+        document.getElementById('lname').value = saved.lname || '';
+        document.getElementById('email').value = saved.email || currentUser.email || '';
+        document.getElementById('street').value = saved.street || '';
+        document.getElementById('city').value = saved.city || '';
+        document.getElementById('pin').value = saved.pin || '';
+      } else if (currentUser) {
+        document.getElementById('email').value = currentUser.email || '';
+      }
+    }
+  </script>
+</body>
+</html>
